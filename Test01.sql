@@ -1,6 +1,3 @@
-SELECT * FROM PROFESSOR;
-COMMIT;
-
 SELECT NAME
      , EMAIL
      , SUBSTR(SUBSTR(email,INSTR(email,'@')+1),1
