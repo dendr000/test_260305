@@ -18,7 +18,6 @@
 				+"to_char(hiredate, 'YYYY-MM-DD HH24:MI:SS') as hiredate, "
 		 	    +"sal, comm, deptno from emp";
 %>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
