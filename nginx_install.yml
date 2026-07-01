@@ -1,0 +1,25 @@
+---
+- name: Install nginx on linux
+  hosts: nginx
+  gather_facts: no
+
+  tasks:
+      - name: install epel-release
+        yum:
+            name=epel-release
+            state=latest
+      - name: install nginx web server
+        yum:
+            name=nginx
+            state=present
+      - name: 로컬에 있는 index.html 파일을 서버로 복사
+        copy:
+            src: ./index.html
+            dest: /usr/share/nginx/html/index.html
+            owner: root
+            group: root
+            mode: '0644'
+      - name:  nginx 서버 시작
+        service:
+            name: nginx
+            state: started
